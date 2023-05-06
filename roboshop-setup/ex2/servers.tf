@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
   count = 5
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
-  wait_for_fulfillment   = "true"
+#   wait_for_fulfillment   = "true"
   vpc_security_group_ids = [ "sg-0111cc490d6b33509" ]
 }
 
