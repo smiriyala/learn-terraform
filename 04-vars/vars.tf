@@ -31,4 +31,26 @@ output "cli" {
 }
 
 #======shell form=======
-#declar
+#declare
+
+
+#=========================
+#list variable
+
+variable "d1lsit" {
+    default = [ 
+        {
+        course_name = "aws"
+        trainer_name = "raju"
+        },
+        {
+         course_name = "devops"
+         trainer_name = "ravi"
+        }
+    ]
+  
+}
+
+output "d1lsit_output" {
+    value = [ var.d1lsit.*.course_name, var.d1lsit.*.trainer_name]
+}
