@@ -1,0 +1,1 @@
+firstglobalvariable = "I am global variable"
