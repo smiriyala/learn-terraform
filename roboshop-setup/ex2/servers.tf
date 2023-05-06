@@ -20,7 +20,7 @@ variable "instance" {
 }
 
 #we have several instances, hence can be used * to represent multiple pupublic IP address
-output "public ip" {
+output "publicip" {
     value = aws_instance.frontend.*.public_ip
   
 }
