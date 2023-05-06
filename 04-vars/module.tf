@@ -1,3 +1,3 @@
-module "vars" {
-  source = "learn-terraform/04-vars/vars.tf"
-}
+# module "vars" {
+#   source = "./04-vars/vars.tf"
+# }
