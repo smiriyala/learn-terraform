@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
     owners = ["973714476881"]
 }
 
-resource "aws_spot_instance_request" "frontend" {
+resource "aws_instance" "frontend" {
   count = 5
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
