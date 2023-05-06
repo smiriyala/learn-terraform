@@ -11,7 +11,7 @@ resource "aws_instance" "frontend" {
 #   wait_for_fulfillment   = "true"
   vpc_security_group_ids = [ "sg-0111cc490d6b33509" ]
   tags = {
-    name=[ var.instance]
+    Name = var.instance[count.index]
   }
 }
 
