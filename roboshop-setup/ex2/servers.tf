@@ -4,7 +4,6 @@ data "aws_ami" "ami" {
     owners = ["973714476881"]
 }
 
-
 resource "aws_spot_instance_request" "frontend" {
   count = 5
   ami           = data.aws_ami.ami.image_id
