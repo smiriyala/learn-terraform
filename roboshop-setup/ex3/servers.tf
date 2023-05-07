@@ -31,3 +31,36 @@ variable "instance" {
 
     }
 }
+
+output "publicip" {
+  value = [ aws_instance.servers["catalogue"].public_ip, aws_instance.servers["user"].public_ip]
+}
+output "multipleip" {
+  value = [ for k,v in aws_aws_instance.servers: v.public_ip]
+}
+
+
+#========immeture way of code, same achivable as above=======
+
+# variable "names" {
+#   default = ["user","catalogue"]
+  
+# }
+
+# variable "types" {
+#   default = ["t3.micro","t3.small"]
+  
+# }
+
+# resource "aws_instance" "servers" {
+#   count = length(var.names)
+#   ami           = data.aws_ami.ami.image_id
+#   instance_type = var.types[count.index]
+# #   wait_for_fulfillment   = "true"
+#   vpc_security_group_ids = [ "sg-0111cc490d6b33509" ]
+#   tags = {
+#     Name = var.names[count.index]
+#   }
+# }
+
+#===========immeture code ended=================
