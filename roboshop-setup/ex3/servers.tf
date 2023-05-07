@@ -36,11 +36,11 @@ output "publicip" {
   value = [ aws_instance.servers["catalogue"].public_ip, aws_instance.servers["user"].public_ip]
 }
 output "multipleip" {
-  value = [ for k,v in aws_aws_instance.servers: v.public_ip ]
+  value = [ for k,v in aws_aws_instance.instance : v.public_ip ]
 }
 
 output "multipleip2" {
-  value = [ for k,v in aws_aws_instance.servers: "${k} is ${v.public_ip}" ]
+  value = [ for k,v in aws_aws_instance.instance: "${k} is ${v.public_ip}" ]
 }
 
 #========immeture way of code, same achivable as above=======
