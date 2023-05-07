@@ -51,6 +51,10 @@ variable "d1lsit" {
   
 }
 
+#multiple values print from list
 output "d1lsit_output" {
     value = [ var.d1lsit.*.course_name, var.d1lsit.*.trainer_name]
 }
+
+
+#================Map variable
