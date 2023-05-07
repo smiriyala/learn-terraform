@@ -36,7 +36,7 @@ output "publicip" {
   value = [ aws_instance.servers["catalogue"].public_ip, aws_instance.servers["user"].public_ip]
 }
 output "multipleip" {
-  value = [ for k,v in aws_aws_instance.servers: v.public_ip]
+  value = [ for k,v in aws_aws_instance.servers: v.public_ip ]
 }
 
 
