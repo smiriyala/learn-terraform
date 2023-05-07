@@ -10,11 +10,11 @@ data "aws_ami" "ami" {
 resource "aws_instance" "servers" {
   for_each = var.instance
   ami           = data.aws_ami.ami.image_id
-  instance_type = var.value["type"]
+  instance_type = each.value["type"]
 #   wait_for_fulfillment   = "true"
   vpc_security_group_ids = [ "sg-0111cc490d6b33509" ]
   tags = {
-    Name = var.value["name"]
+    Name = each.value["name"]
   }
 }
 
