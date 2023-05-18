@@ -68,7 +68,7 @@ resource "aws_instance" "my_instance" {
     instance_type = "t3.micro"
 
     network_interface {
-        network_interface_id = aws_network_interface.my_network_interface
+        network_interface_id = aws_network_interface.my_network_interface.id
         device_index = 0
       
     }
