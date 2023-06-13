@@ -1,3 +1,2 @@
 variable ami_id{}
-variable "instance_type" {} 
-/* variable "sggroupid"{} */
+variable "instance_type" {}
