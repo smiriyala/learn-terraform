@@ -1,5 +1,5 @@
 #sggroup variable
-variable cidr_block {}
+variable vpc_cidr {}
 
 #ec2 module varaibles
 variable ami_id{}
