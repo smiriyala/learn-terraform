@@ -35,6 +35,6 @@ resource "aws_security_group" "allow_tls" {
 }
 
 output "vpcsecgroupid" {
-  vpcsecgroupid = aws_security_group.allow_tls.vpc_id
+  value = aws_security_group.allow_tls.vpc_id
 }
 
