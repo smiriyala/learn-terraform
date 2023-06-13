@@ -20,7 +20,7 @@ variable "d2list" {
 
 #access list variable in resources
 resource "null_resource" "NoResourceMap" {
-    
+    #as many counts, resource block get executed those many times. 
     count = length(var.d2list)
 }
 

@@ -32,10 +32,42 @@ output "cli" {
 
 #======shell form=======
 #declare
-
+#Export variables to environement variable and use them in terraform
+#this values can be set during terraform execution, set in 
+###############################################################COMMANDexport TF_VAR_cli="Iam from shell environemt"
+#This value will be called while terraform apply. 
 
 #=========================
 #list variable
+
+
+#=================================variable precendence=========================
+## Variable Prescedencies.
+#NOTEs: -var= , -var-file=, *.auto.tfvars, terraform.tfvars, SHELL,ENV THEN finally ASK User for varaible value. 
+
+
+#list
+variable "sample6" {
+  default = [
+    "hello", 1000, true, "world"
+  ]
+}
+
+variable "sample7" {
+  default = {
+    string = "hello", 
+    number = 1000, 
+    bool = true, 
+    string = "world"
+  }
+}
+
+##Access all above sample variables, LIST, MAP
+output "alltype" {
+  value = "variable sample5 - ${var.sample5}, First value in the list - ${var.sample6[0]}, Boolean value of  Map - ${var.sample7[bool]}"
+  
+}
+#================Map variable
 
 variable "d1lsit" {
     default = [ 
@@ -51,10 +83,8 @@ variable "d1lsit" {
   
 }
 
+
 #multiple values print from list
 output "d1lsit_output" {
     value = [ var.d1lsit.*.course_name, var.d1lsit.*.trainer_name]
 }
-
-
-#================Map variable
