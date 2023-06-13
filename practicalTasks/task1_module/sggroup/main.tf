@@ -1,25 +1,17 @@
 
 
-resource "aws_vpc" "my_vpc" {
-  cidr_block       = var.vpc_cidr
-  tags = {
-    Name = "myvpc"
-  }
-}
-
-
 #creaeting security group
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.my_vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "TLS from VPC"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.my_vpc.cidr_block]
+    cidr_blocks = [var.vpc_cidr]
   }
 
   egress {

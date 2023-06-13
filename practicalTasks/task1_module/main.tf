@@ -1,7 +1,13 @@
+module "vpcCreation"{
+  source = "./vpc-aws"
+  vpc_cidr  = var.vpc_cidr
+}
+
+
 module "SecGroupCreation" {
   source = "./sggroup"
   vpc_cidr  = var.vpc_cidr
-
+  vpc_id = module.vpcCreation.vpcid
 }
 
 module "Ec2Instance_Creation" {
