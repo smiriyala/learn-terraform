@@ -1,2 +1,5 @@
-variable cidr_block {}
+variable vpc_cidr {}
 /* output vpcsecgroupid{} */
+variable "sggroupid" {
+  
+}
