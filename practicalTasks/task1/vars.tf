@@ -1,3 +1,4 @@
-variable cidr_block {}
+variable vpc_cidr {}
 variable ami_id{}
 variable "instance_type" {}
+variable "sggroupid" {}
