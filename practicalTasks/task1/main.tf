@@ -1,6 +1,7 @@
 module "SecGroupCreation" {
   source = "./sggroup"
   cidr_block = var.cidr_block
+  sggroupid = var.sggroupid
 
 }
 
